@@ -28,20 +28,23 @@
    2. Beim ersten Lauf Login: `npx supabase login`, anschließend Supabase-Access-Token einfügen.
    3. Die generierte `supabase/config.toml` prüfen und `project_ref` sowie `api_url` ergänzen (aus Schritt 2).
 4. **Lokale Umgebungsvariablen definieren**
-   1. Datei `.env.local` (Client) anlegen mit:
+   1. Dateien direkt im Projektwurzelverzeichnis ablegen (`op-item-db/.env.local`, `op-item-db/.env`).
+   2. Datei `.env.local` (Client) anlegen mit:
       ```bash
       VITE_SUPABASE_URL="https://<project-ref>.supabase.co"
       VITE_SUPABASE_ANON_KEY="<anon-key>"
       VITE_DISCORD_CLIENT_ID="<discord-client-id>"
+      VITE_DISCORD_REDIRECT_URI="https://<your-domain>/auth/callback"
       ```
-   2. Datei `.env` für Cloudflare Pages Functions (Server) anlegen mit:
+   3. Datei `.env` für Cloudflare Pages Functions (Server) anlegen mit:
       ```bash
       SUPABASE_URL="https://<project-ref>.supabase.co"
       SUPABASE_SERVICE_ROLE_KEY="<service-role-key>"
       DISCORD_CLIENT_ID="<discord-client-id>"
       DISCORD_CLIENT_SECRET="<discord-client-secret>"
+      SUPABASE_JWT_SECRET="<supabase-jwt-secret>"
       ```
-   3. Cloudflare Pages: Menüpfad `Pages` → Projekt auswählen → `Settings` → `Environment variables` → Werte aus `.env` hinterlegen (production & preview).
+   4. Cloudflare Pages: Menüpfad `Pages` → Projekt auswählen → `Settings` → `Environment variables` → Werte aus `.env` hinterlegen (production & preview).
 5. **Sicherheitshinweis**
    - Den `service_role` Schlüssel ausschließlich serverseitig in Cloudflare Pages Functions oder anderen vertrauenswürdigen Backends verwenden. Niemals in Client-Bundle oder öffentlichen Repos einchecken.
 
