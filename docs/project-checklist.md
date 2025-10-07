@@ -1,12 +1,12 @@
 # OP-Item-DB Projekt-Checkliste
 
-1. **Repository anlegen** – Neues Git-Repo `op-item-db` erstellen, README mit Projektvision und Tech-Stack anlegen, Branch-Schutz einrichten.
-2. **Lokale Dev-Umgebung** – Node.js (>=18), pnpm, Supabase CLI, Cloudflare Wrangler installieren; `.nvmrc`/`.tool-versions` pflegen; README mit Setup-Anleitung erweitern.
-3. **Supabase-Projekt** – Supabase Dashboard: neues Projekt, Datenbank-Region wählen, API-Keys sicher ablegen (1Password, env vars vorbereiten).
-4. **Datenbank-Schema** – SQL-Migration für Item-Tabellen (Items, Kategorien, Tags, Quellen), Relationen & Indizes definieren, Seeds für Kern-Daten.
-5. **Row Level Security (RLS)** – RLS global aktivieren, Policies für öffentliche Lesezugriffe und restriktive Schreibrechte (nur Admin-Rollen) erstellen.
-6. **Storage** – Bucket für Item-Assets (Icons, Screenshots) anlegen, öffentliche Lese-Richtlinien + Upload-Service-Rolle Policies definieren.
-7. **Discord-Auth** – Discord OAuth-Anwendung einrichten, Redirect-URIs (lokal + Produktion) setzen, Secrets in Supabase Auth Provider hinterlegen.
-8. **Pages Functions API** – Cloudflare Pages Functions Repo-Struktur anlegen, Supabase Service Role mit env binding konfigurieren, erste Health-Check-Route.
-9. **React-App Grundgerüst** – Vite + React + TS + Tailwind Setup, Layout, Routing, Supabase Client Provider, Basic Auth-Gate vorbereiten.
-10. **Deployment** – Cloudflare Pages Projekt verbinden, Build-Pipeline (pnpm build) definieren, Supabase API Keys & Wrangler Secrets setzen, Preview + Production Deploy testen.
+1. **Repository anlegen** – Git-Repo `op-item-db` erstellen, Default-Branch schützen, README mit Projektvision & Architekturnotizen schreiben.
+2. **Lokale Dev-Umgebung** – Node.js ≥20, pnpm, Supabase CLI und Cloudflare Wrangler installieren; `.nvmrc`/`.tool-versions` hinzufügen und Onboarding-Anleitung prüfen.
+3. **Supabase-Projekt** – Neues Supabase Projekt aufsetzen, Region wählen, API-Keys sicher (1Password + `.env.local`/`.dev.vars`) hinterlegen.
+4. **Datenbank-Schema** – Migrationen für Items, Kategorien, Tags, Quellen erstellen; Relationen/Indizes definieren und Seeds für Basisdaten vorbereiten.
+5. **Row Level Security (RLS)** – RLS global aktivieren, Policies für öffentliche Leserechte, authentifizierte Schreiboperationen und Admin-Rollen schreiben.
+6. **Storage** – Bucket für Item-Assets anlegen, Public-Read-Policy + Service-Role Upload-Policy definieren, Pfadkonventionen dokumentieren.
+7. **Discord-Auth** – Discord OAuth-App konfigurieren, Redirect-URIs (lokal/Pages) registrieren, Secrets in Supabase Auth Provider & Cloudflare Secrets synchronisieren.
+8. **Pages Functions API** – Cloudflare Pages Functions Struktur samt `wrangler.toml` anlegen, Supabase Service-Role binden, Health-Check & Items-Endpunkte prototypen.
+9. **React-App Grundgerüst** – Vite + React + TS + Tailwind scaffolden, Routing/Layout, Supabase Client Provider & Auth-Gate einbauen, Basis-Pages erstellen.
+10. **Deployment** – Cloudflare Pages Projekt verbinden, Build (`pnpm build`) + Preview Deploy testen, Supabase/Discord Secrets als Pages Secrets setzen, Produktions-Review durchführen.

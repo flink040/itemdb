@@ -1,0 +1,6 @@
+# Cloudflare Pages Functions lokale Variablen
+SUPABASE_URL="https://your-project.supabase.co"
+SUPABASE_ANON_KEY="public-anon-key"
+SUPABASE_SERVICE_ROLE="service-role-key"
+# Optional: Nur verwenden, wenn CORS eingeschränkt werden soll
+ALLOWED_ORIGIN="http://localhost:5173"
