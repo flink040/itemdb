@@ -49,3 +49,11 @@
 8. Cloudflare Pages Functions API: Initialize Functions directory, set Supabase service key bindings, add health/auth checks.
 9. React app scaffold: Set up routing, layout shell, Supabase client context, auth guard, base pages.
 10. Deployment: Configure Pages project, link repo, set build command & env vars, verify preview -> production deploy.
+
+## Lokale Entwicklung
+- Vite + React starten: `pnpm dev`
+- Supabase lokal: `supabase start`
+- Cloudflare Pages Functions im lokalen Worker testen:
+  ```bash
+  npx wrangler pages dev .
+  ```

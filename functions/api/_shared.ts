@@ -3,6 +3,7 @@ import { createClient, type SupabaseClient, type User } from '@supabase/supabase
 export interface Env {
   SUPABASE_URL: string;
   SUPABASE_SERVICE_ROLE: string;
+  SUPABASE_ANON_KEY?: string;
   ALLOWED_ORIGIN?: string;
 }
 
